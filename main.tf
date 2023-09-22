@@ -181,7 +181,7 @@ resource "azurerm_linux_virtual_machine" "test-vm" {
    provisioner "remote-exec" {
      inline = [
      # Install curl for Sliver download command
-     "sudo apt update && sudo apt install curl -y",
+     "sudo apt update && sudo apt install curl mingw-w64 binutils-mingw-w64 g++-mingw-w64 -y",
      "mkdir sliver",
      # My dumb oneliner to download the latest sliver client and server. There is probably a better way to do this. 
      "wget -O sliver/sliver-client_linux -q $(curl -s 'https://api.github.com/repos/BishopFox/sliver/releases/latest' | awk -F '\"' '/browser_download_url/{print $4}' | grep sliver-client_linux | grep -iv 'sig')",
