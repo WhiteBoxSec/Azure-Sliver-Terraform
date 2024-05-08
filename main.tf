@@ -134,14 +134,14 @@ resource "azurerm_linux_virtual_machine" "test-vm" {
   source_image_reference {
     publisher = "kali-linux"
     offer     = "kali"
-    sku       = "kali-2023-3"
-    version   = "2023.3.0"
+    sku       = "kali-2023-4"
+    version   = "2023.4.0"
   }
 
   # plan allows the accepting of the Kali VM usage terms.
   plan {
     # name == sku
-    name      = "kali-2023-3"
+    name      = "kali-2023-4"
     # product == offer
     product   = "kali"
     # publisher == publisher
